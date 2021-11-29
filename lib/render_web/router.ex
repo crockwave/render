@@ -18,6 +18,7 @@ defmodule RenderWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    live "/classes", ClassesLive, :classes_live
   end
 
   # Other scopes may use custom stacks.

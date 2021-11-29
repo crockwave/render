@@ -1,0 +1,64 @@
+<div class="flex flex-row shadow-md flex-grow border-solid border mb-4 p-2 rounded-md hover:shadow-mdh hover:border-brand-color cursor-pointer" style={"background-color:#{@back_color};"} phx-click="select_class" phx-value-id={@id}>
+  <div style={"background-color:#{@color};"} class="w-4 mr-4 border-solid border border-brand-color">
+  </div>
+  <div class="flex-col">
+    <div>
+      <b><%= @class.title %></b>
+    </div>
+    <div>
+      <%= @username %>
+    </div>
+  </div>
+  <div class="ml-auto order-3 group inline-block">
+    <span
+      class="outline-none focus:outline-none px-3 py-1 bg-white rounded-sm flex items-center" style={"background-color:#{@back_color} !important;"}
+    >
+      <i class="las la-ellipsis-v"></i>
+    </span>
+    <ul
+      class="group-item bg-white border rounded-sm shadow-md transform scale-0 group-hover:scale-100 absolute 
+    transition duration-150 ease-in-out origin-top-left min-w-32"
+    >
+      <li class="group-item rounded-sm px-3 py-1 mb-0 hover:bg-gray-100 cursor-pointer"><i class="las la-edit"></i> Edit class details</li>
+      <li class="group-item rounded-sm relative px-3 py-1 mb-0 hover:bg-gray-100 cursor-pointer">
+        <span
+          class="w-full text-left flex items-center outline-none focus:outline-none"
+        >
+          <span class="pr-1 flex-1"><i class="las la-user-minus"></i> Remove student from class</span>
+          <span class="mr-auto">
+            <i class="las la-angle-right h-4 w-4
+              transition opacity duration-150 ease-in-out"></i>
+          </span>
+        </span>
+        <ul
+          class="group-item bg-white border rounded-sm shadow-md absolute top-0 right-0 
+    transition duration-150 ease-in-out origin-top-left
+    min-w-32
+    "
+        >
+          <li class="group-item px-3 py-1 mb-0 hover:bg-gray-100 cursor-pointer">Curtis Rock</li>
+          <li class="group-item px-3 py-1 mb-0 hover:bg-gray-100 cursor-pointer">Shawn Sizer</li>
+          <li class="group-item px-3 py-1 mb-0 hover:bg-gray-100 cursor-pointer">Student 3</li>
+          <li class="group-item px-3 py-1 mb-0 hover:bg-gray-100 cursor-pointer">Student 4</li>
+          <li class="group-item px-3 py-1 mb-0 hover:bg-gray-100 cursor-pointer">Student 5</li>
+          <li class="group-item px-3 py-1 mb-0 hover:bg-gray-100 cursor-pointer">Student 6</li>
+          <li class="group-item px-3 py-1 mb-0 hover:bg-gray-100 cursor-pointer">Student 7</li>
+          <li class="group-item px-3 py-1 mb-0 hover:bg-gray-100 cursor-pointer">Student 8</li>
+          <li class="group-item px-3 py-1 mb-0 hover:bg-gray-100 cursor-pointer">Student 9</li>
+          <li class="group-item px-3 py-1 mb-0 hover:bg-gray-100 cursor-pointer">Student 10</li>
+          <li class="group-item px-3 py-1 mb-0 hover:bg-gray-100 cursor-pointer">Student 11</li>
+          <li class="group-item px-3 py-1 mb-0 hover:bg-gray-100 cursor-pointer">Student 12</li>
+          <li class="group-item px-3 py-1 mb-0 hover:bg-gray-100 cursor-pointer">Student 13</li>
+          <li class="group-item px-3 py-1 mb-0 hover:bg-gray-100 cursor-pointer">Student 14</li>
+          <li class="group-item px-3 py-1 mb-0 hover:bg-gray-100 cursor-pointer">Student 15</li>
+          <li class="group-item px-3 py-1 mb-0 hover:bg-gray-100 cursor-pointer">Student 16</li>
+          <li class="group-item px-3 py-1 mb-0 hover:bg-gray-100 cursor-pointer">Student 17</li>
+          <li class="group-item px-3 py-1 mb-0 hover:bg-gray-100 cursor-pointer">Student 18</li>
+          <li class="group-item px-3 py-1 mb-0 hover:bg-gray-100 cursor-pointer">Student 19</li>
+          <li class="group-item px-3 py-1 mb-0 hover:bg-gray-100 cursor-pointer">Student 20</li>
+        </ul>
+      </li>
+      <li class="group-item rounded-sm px-3 mb-0 py-1 hover:bg-gray-100 cursor-pointer" data-confirm={gettext("Are you sure you want to archive?%{br_tag}The class can be recovered later", br_tag: "<br/>")} phx-click="archive_class" phx-value-id={@class.id}><i class="las la-archive"></i> Archive this class</li>
+    </ul>
+  </div>
+</div>

@@ -7,7 +7,7 @@ defmodule RenderWeb.ClassesLive do
   alias Render.Repo
   import RenderWeb.Gettext
   import Ecto.Query
-  # import Render.Util
+  import Render.Util
 
   @impl true
   def mount(params, session, socket) do
@@ -17,8 +17,7 @@ defmodule RenderWeb.ClassesLive do
     end
   end
 
-  def connected_mount(_params, %{"avatar" => avatar, "display_name" => display_name, "user_id" => user_id} = session, socket) do
-    # storing avatar filename in session and avatar path in socket assigns
+  def connected_mount(_params, _session, socket) do
     classes = get_classes()
     selected_class = "0"
     IO.puts("ClassesLive connected_mount, classes: #{inspect classes}")
