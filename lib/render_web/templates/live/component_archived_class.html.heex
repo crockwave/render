@@ -1,26 +1,11 @@
-<div class="flex flex-row shadow-md flex-grow border-solid border mb-4 p-2 rounded-md hover:shadow-mdh hover:border-brand-color" style={"background-color:#{@back_color};"}>
-  <div style={"background-color:#{@color};"} class="w-4 mr-4 border-solid border border-brand-color">
-  </div>
+<div style={"background-color:#{@back_color}; cursor:pointer; border:solid 1px; padding:4px; margin-bottom:8px;"}>
   <div class="flex-col">
     <div>
-      <b><%= @class.title %></b>
-    </div>
-    <div>
-      <%= @username %>
+      <b><%= @class.title %> - Archived</b>
     </div>
   </div>
-  <div class="ml-auto order-3 group inline-block">
-    <span
-      class="outline-none focus:outline-none px-3 py-1 rounded-sm flex items-center" style={"background-color:#{@back_color};"}
-    >
-      <i class="las la-archive"></i>
-    </span>
-    <ul
-      class="group-item bg-white border rounded-sm shadow-md transform scale-0 group-hover:scale-100 absolute 
-    transition duration-150 ease-in-out origin-top-left min-w-32"
-    >
-      <li class="group-item rounded-sm px-3 mb-0 py-1 hover:bg-gray-100 cursor-pointer" data-confirm={gettext("Are you sure you want to unarchive?")} phx-click="unarchive_class" phx-value-id={@class.id}><i class="las la-box-open"></i> Unarchive this class</li>
-    </ul>
+  <div>
+    <button phx-click="unarchive_class" phx-value-id={@class.id} type="button" aria-label="Unarchive class">Unarchive</button>
   </div>
 </div>
 

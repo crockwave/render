@@ -2,12 +2,10 @@ defmodule RenderWeb.ClassesLive do
   use Phoenix.LiveView,
     layout: {RenderWeb.LayoutView, "live.html"}
 
-  alias RenderWeb.Router.Helpers, as: Routes
   alias Render.Classes.Class
   alias Render.Repo
   import RenderWeb.Gettext
   import Ecto.Query
-  import Render.Util
 
   @impl true
   def mount(params, session, socket) do
@@ -43,7 +41,7 @@ defmodule RenderWeb.ClassesLive do
   end  
 
   @impl true
-  def handle_event("archive_class", %{"id" => class_id} = _params, %{assigns: assigns} = socket) do
+  def handle_event("archive_class", %{"id" => class_id} = _params, socket) do
     class = Repo.get!(Class, class_id)
     class = Ecto.Changeset.change class, archived: true
     case Repo.update class do
@@ -57,7 +55,7 @@ defmodule RenderWeb.ClassesLive do
   end
 
   @impl true
-  def handle_event("unarchive_class", %{"id" => class_id} = _params, %{assigns: assigns} = socket) do
+  def handle_event("unarchive_class", %{"id" => class_id} = _params, socket) do
     class = Repo.get!(Class, class_id)
     class = Ecto.Changeset.change class, archived: false
     case Repo.update class do
