@@ -19,6 +19,7 @@ defmodule RenderWeb.Router do
 
     get "/", PageController, :index
     live "/classes", ClassesLive, :classes_live
+    live "/render", RenderLive, :render_live
   end
 
   # Other scopes may use custom stacks.

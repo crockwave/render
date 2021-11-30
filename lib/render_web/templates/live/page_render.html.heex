@@ -1,0 +1,25 @@
+<section>
+  <div>
+    <div>
+      <div>
+        DOM is NOT properly manipulated when div wrapper is NOT added to LiveComponent call
+      </div>
+      <div>
+        <b>Class</b>
+      </div>
+      <div>
+        <%= for class <- @classes do %>
+          <%= if class.archived do %>          
+            <.live_component module={RenderWeb.Components.ArchivedRender} class={class} back_color="#f0f0f0" id={class.id} />
+          <% else %>
+            <%= if Render.Util.class_selected?(class.id, @selected_class) do %>
+              <.live_component module={RenderWeb.Components.Render} class={class} selected="true" back_color="#e7facc" id={class.id} />
+            <% else %>
+              <.live_component module={RenderWeb.Components.Render} class={class} back_color="#fff" id={class.id} />
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

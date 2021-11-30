@@ -1,0 +1,11 @@
+<div id={@id} style={"background-color:#{@back_color}; cursor:pointer; border:solid 1px; padding:4px; margin-bottom:8px;"}>
+  <div class="flex-col">
+    <div>
+      <b><%= @class.title %> - Archived</b>
+    </div>
+  </div>
+  <div>
+    <button phx-click="unarchive_class" phx-value-id={@class.id} type="button" aria-label="Unarchive class">Unarchive</button>
+  </div>
+</div>
+

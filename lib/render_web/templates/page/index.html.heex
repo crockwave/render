@@ -7,7 +7,8 @@
   <article class="column">
     <h2>Rendering Issue Demo</h2>
     <ul>
-      <li><%= link "Classes State Toggling", to: Routes.classes_path(@conn, :classes_live) %></li>
+      <li><%= link "Classes State Toggling - Good rendering", to: Routes.classes_path(@conn, :classes_live) %></li>
+      <li><%= link "Classes State Toggling - Poor rendering", to: Routes.render_path(@conn, :render_live) %></li>
     </ul>
   </article>
   <article class="column">

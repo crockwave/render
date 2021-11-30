@@ -1,0 +1,10 @@
+<div id={@id} style={"background-color:#{@back_color}; cursor:pointer; border:solid 1px; padding:4px; margin-bottom:8px;"} phx-click="select_class" phx-value-id={@id}>
+  <div class="flex-col">
+    <div>
+      <b><%= @class.title %></b>
+    </div>
+  </div>
+  <div>
+    <button phx-click="archive_class" phx-value-id={@class.id} type="button" aria-label="Archive class">Archive</button>
+  </div>
+</div>
